@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    animation: slideDown 0.5s ease-in-out; /* Animate navbar appearance */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+    position: relative; /* For positioning pseudo-element */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd;
+    color: black;
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Underline effect on hover */
+.navbar ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: white;
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+    margin: auto;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+/* Animation for navbar appearance */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0; /* Fade out */
+    }
+    to {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+/* Main Heading */
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 30px auto; /* Center the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+h2 {
+    font-size: 24px; /* Larger font for section headings */
+    margin-top: 20px;
+    color: #4CAF50; /* Green color for headings */
+}
+
+p {
+    font-size: 18px; /* Larger font size for paragraphs */
+    line-height: 1.6; /* Improved readability */
+}
+
+ol {
+    padding-left: 20px; /* Indentation for ordered list */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul li {
+        display: block; /* Stack items on smaller screens */
+        margin-bottom: 10px;
+    }
+/* Smooth transition for section headings */
+h2 {
+    transition: color 0.3s ease;
+}
+
+/* Change color on hover for headings */
+h2:hover {
+    color: #4CAF50; /* Change to a color of your choice */
+}
+
+/* Smooth transition for sections */
+.container > section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards; /* Add fadeIn animation */
+    animation-delay: 0.3s; /* Delay for the first section */
+}
+
+.container > section:nth-child(1) {
+    animation-delay: 0.3s; /* Introduction */
+}
+.container > section:nth-child(2) {
+    animation-delay: 0.6s; /* Experimental Setup */
+}
+.container > section:nth-child(3) {
+    animation-delay: 0.9s; /* Relevant Equations */
+}
+.container > section:nth-child(4) {
+    animation-delay: 1.2s; /* Summary */
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+}
