@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maveli - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="maveli.png" alt="Mr. Mahabali" class="centered-image">
+            <h1>MAHABALI CHAKRAVARTHY</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Doings</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p>| Web Developer | Living in Pathalam | Visiting Kerala |</p>
+        </div>
+    </header>
+    
+    <section id="about">
+        <h2>About Me Mahabali</h2>
+        <p class="large-paragraph">
+            Greetings! I am Mahabali,<br>
+            the great king of Kerala, known for my unparalleled devotion to my people and my deep sense of justice.<br>
+            My reign was marked by prosperity and harmony, where no one went hungry and all lived in peace.<br>
+            However, my humility and dedication to my subjects caught the attention of the gods, leading to my temporary exile.<br>
+            Each year, during the festival of Onam, I return to visit my beloved people, bringing joy and celebration.<br>
+            <b>Welcome to my realm!</b>
+        </p>
+    </section>
+    
+    <section id="projects">
+        <h2>My Doings</h2>
+        <div class="project">
+            <h3>Agricultural Development</h3>
+            <p>I promoted sustainable farming practices to ensure food security and abundance, leading to prosperous harvests.</p>
+        </div>
+        <div class="project">
+            <h3>Water Management</h3>
+            <p>Implemented irrigation systems and water conservation techniques to support agriculture and provide clean drinking water.</p>
+        </div>
+        <div class="project">
+            <h3>Social Welfare</h3>
+            <p>Established programs to care for the elderly, orphans, and those in need, ensuring no one was left behind.</p>
+        </div>
+        <div class="project">
+            <h3>Trade and Commerce</h3>
+            <p>Encouraged trade relations and built infrastructure to facilitate commerce, boosting the economy.</p>
+        </div>
+        <div class="project">
+            <h3>Education</h3>
+            <p>Advocated for education and knowledge-sharing, empowering my subjects with skills and wisdom.</p>
+        </div>
+        <div class="project">
+            <h3>Cultural Promotion</h3>
+            <p>Supported the arts and festivals, fostering a sense of community and cultural heritage among my people.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+            <i class="fas fa-envelope"></i> 
+            Email: <a href="mailto:mahabhali@gmail.com" target="_blank">mahabhali@gmail.com</a>
+        </p>
+    </section>
+    
+    
+    
+    <footer>
+        <p>&copy; 2024 ANTONY VICTOR S</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('section');
+        
+            function showSections() {
+                const triggerBottom = window.innerHeight / 5 * 4; // Trigger point
+        
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+        
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('section-visible'); // Add visible class
+                    } else {
+                        section.classList.remove('section-visible'); // Remove visible class
+                    }
+                });
+            }
+        
+            window.addEventListener('scroll', showSections);
+            showSections(); // Initial check
+        });
+        </script>
+        
+</body>
+</html>
