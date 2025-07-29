@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Contact Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            gap: 30px;
+            padding: 20px;
+            justify-content: center; /* Center items */
+            align-items: center;
+            width: 100%; /* Ensure the container takes full width */
+            max-width: 800px; /* Set a max width as needed */
+        }
+        .team-member {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        .team-member h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .team-member h4 {
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .team-member p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .team-member a {
+            margin: 0 5px;
+            display: inline-block; /* Added for better alignment */
+        }
+        .team-member a img {
+            width: 24px; /* Adjust logo size */
+            height: 24px; /* Adjust logo size */
+            transition: transform 0.3s ease;
+        }
+        .team-member a:hover img {
+            transform: scale(1.1); /* Scale on hover */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-container::-webkit-scrollbar {
+            display: none;
+        }
+        .team-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="team-container">
+        <div class="team-member">
+            <img src="hari.jpg" alt="Hariprasad Aji">
+            <h3>Hariprasad Aji</h3>
+            <p><strong>Email:</strong> <a href="mailto:ramk487574@gmail.com">ramk487574@gmail.com</a></p>
+            <h4>Full Stack Dev</h4>
+            <p>
+                <a href="https://github.com/whitetshirte" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo">
+                </a> 
+                <a href="https://www.instagram.com/hari_c137/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+                </a>
+            </p>
+        </div>
+
+        <div class="team-member">
+            <img src="anto.jpg" alt="Antony Victor S">
+            <h3>Antony Victor S</h3>
+            <p><strong>Email:</strong> <a href="mailto:anto_vs@outlook.com">anto_vs@outlook.com</a></p>
+            <h4>Dev</h4>
+            <p>
+                <a href="https://github.com/AntoVs" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo">
+                </a> 
+                <a href="https://www.instagram.com/_anto_vs_7/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+                </a>
+            </p>
+        </div>
+
+        <div class="team-member">
+            <img src="aszi.jpg" alt="Asif CA">
+            <h3>Asif CA</h3>
+            <p><strong>Email:</strong> <a href="mailto:asifanwar2006@gmail.com">asifanwar2006@gmail.com</a></p>
+            <h4>Full Stack Dev</h4>
+            <p>
+                <a href="https://github.com/asif-c-a" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo">
+                </a> 
+                <a href="https://www.instagram.com/_asif_c_a_" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+                </a>
+            </p>
+        </div>
+
+        <div class="team-member">
+            <img src="sanji.jpg" alt="Sanchith R Panicker">
+            <h3>Sanchith R Panicker</h3>
+            <p><strong>Email:</strong> <a href="mailto:sanchithbhagath10@gmail.com">sanchithbhagath10@gmail.com</a></p>
+            <h4>Research</h4>
+            <p>
+                <a href="https://github.com/cursedwhite" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo">
+                </a> 
+                <a href="https://www.instagram.com/thatoddmindedguy" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+                </a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
