@@ -1,94 +1,27 @@
 #include <stdio.h>
+#define MAX 128
 
-int push(int stack[], int data, int n, int top) {
-    if (top == n - 1)
-        printf("Stack is full\n");
-    else {
-        top++;
-        stack[top] = data;
-    }
-    return top;
+typedef struct {int items[MAX]; int top;} Stack; 
+
+void push(Stack *s, int val) { s->top <= MAX -1 ? s->items[++s->top] = val : printf("overflow \n"); }
+int  peek(Stack *s) { return s->top >= 0 ? s->items[s->top] : printf("empty \n");       }
+void show(Stack *s) { for (int i = s->top; i >= 0; i--) printf("%d \n", s->items[i]);   }
+int  poop(Stack *s) { return s->top >= 0 ? s->items[s->top--] : printf("underflow \n"); }
+void full(Stack *s) { s->top == MAX -1 ? printf("stack is full \n") : printf("stack is not full \n"); } 
+void empt(Stack *s) { s->top == -1 ? printf("stack is empty \n") : printf("stack is not empty \n"); }
+
+int main(void) {
+
+  Stack s = {.top = -1 }; int ch, val;
+  while(1) {
+    printf("1.push 2.pop 3.peek 4.isfull 5.isempty 6.show 7.exit "); scanf("%d", &ch);
+    if(ch == 1) { printf("Val: "); scanf("%d", &val); push(&s, val); }
+    else if (ch == 2) { val = poop(&s); printf("%d\n", val); }
+    else if (ch == 3) { val = peek(&s); printf("%d\n", val); }
+    else if (ch == 4) { full(&s); }
+    else if (ch == 5) { empt(&s); }
+    else if (ch == 6) { show(&s); }
+    else if (ch == 7) break;
+    else {printf("invalid \n");}
+  }
 }
-
-int pop(int stack[], int top) {
-    if (top == -1)
-        printf("Stack is Empty\n");
-    else {
-        printf("Element deleted: %d\n", stack[top]);
-        top--;
-    }
-    return top;
-}
-
-void peek(int stack[], int top) {
-    if (top == -1)
-        printf("Stack is Empty\n");
-    else
-        printf("Top element: %d\n", stack[top]);
-}
-
-void isfull(int top, int n) {
-    if (top == n - 1)
-        printf("Stack is Full\n");
-    else
-        printf("Stack is not Full\n");
-}
-
-void isempty(int top) {
-    if (top == -1)
-        printf("Stack is Empty\n");
-    else
-        printf("Stack is not Empty\n");
-}
-
-void display(int stack[], int top) {
-    if (top == -1) {
-        printf("Stack is Empty\n");
-    } else {
-        printf("Stack elements: ");
-        for (int i = 0; i <= top; i++) {
-            printf("%d  ", stack[i]);
-        }
-        printf("\n");
-    }
-}
-
-int main() {
-    int stack[100], n, ch, data, top = -1;
-
-    printf("Enter the size of stack: ");
-    scanf("%d", &n);
-
-    while (1) {
-        printf("\nChoice Menu:\n1. Insertion\n2. Deletion\n3. Peek\n4. IsEmpty\n5. IsFull\n6. Display\n7. Exit\nEnter your Choice: ");
-        scanf("%d", &ch);
-
-        switch (ch) {
-            case 1:
-                printf("Enter the element to be inserted: ");
-                scanf("%d", &data);
-                top = push(stack, data, n, top);
-                break;
-            case 2:
-                top = pop(stack, top);
-                break;
-            case 3:
-                peek(stack, top);
-                break;
-            case 4:
-                isempty(top);
-                break;
-            case 5:
-                isfull(top, n);
-                break;
-            case 6:
-                display(stack, top);
-                break;
-            case 7:
-                return 0;
-            default:
-                printf("Invalid choice. Please try again.\n");
-        }
-    }
-}
-
